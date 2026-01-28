@@ -1,0 +1,5 @@
+avr-gcc -O2 -Wall -mmcu=atmega328p test.c -o test.out 
+
+avr-objcopy -O ihex test.out test.hex
+
+avrdude -C /etc/avrdude.conf -v -patmega328p -carduino -P /dev/ttyACM0 -b 115200 -D -U flash:w:test.hex
