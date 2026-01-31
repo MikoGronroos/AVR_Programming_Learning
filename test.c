@@ -7,6 +7,32 @@
 
 #define LED PORTB
 
+#define BV(bit) (1 << (bit))
+#define setBit(byte, bit) (byte |= BV(bit))
+#define clearBit(byte, bit) (byte &= ~BV(bit))
+#define toggleBit(byte, bit) (byte ^= BV(bit))define setBit(byte, bit) 
+/*
+int main(void){
+  
+  DDRB = 0xff;
+  PORTB = 7;
+  clearBit(PORTB, 0);
+  while(true){
+
+    _delay_ms(1500);
+
+    clearBit(PORTB, 1);
+
+    _delay_ms(1500);
+
+    PORTB |= (1 << 1);
+
+  }
+  
+}
+*/
+
+/*
 int main(void){
 
   DDRB = 0xff;
@@ -22,6 +48,8 @@ int main(void){
   }
 
 }
+
+*/
 
 /*
 int main(void){
