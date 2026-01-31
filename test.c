@@ -10,7 +10,23 @@
 #define BV(bit) (1 << (bit))
 #define setBit(byte, bit) (byte |= BV(bit))
 #define clearBit(byte, bit) (byte &= ~BV(bit))
-#define toggleBit(byte, bit) (byte ^= BV(bit))define setBit(byte, bit) 
+#define toggleBit(byte, bit) (byte ^= BV(bit))define setBit(byte, bit)
+
+int main(void){
+
+  DDRB = 0xff;
+  DDRD = 0x00;
+  PORTD = 0xff;
+  while(true){
+
+    if((PIND & (1 << 2)) == 0){
+      PORTB = 7;
+    }else{
+      PORTB = 0;
+    }
+  }
+}
+
 /*
 int main(void){
   
