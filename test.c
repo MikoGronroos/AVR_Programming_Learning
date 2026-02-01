@@ -17,8 +17,8 @@ int main(void){
   DDRB = 0xFF;
   LED = 0;
 
-  DDRD &= ~(1<<2);
-  PORTD = 0;
+  DDRD = 0x00;
+  PORTD = 0xff;
   while(true){
     if((PIND & (1 << 2)) > 0){
       LED = 7;
