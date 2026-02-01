@@ -14,15 +14,16 @@
 
 int main(void){
 
-  DDRB = 0xff;
-  DDRD = 0x00;
-  PORTD = 0xff;
-  while(true){
+  DDRB = 0xFF;
+  LED = 0;
 
-    if((PIND & (1 << 2)) == 0){
-      PORTB = 7;
+  DDRD &= ~(1<<2);
+  PORTD = 0;
+  while(true){
+    if((PIND & (1 << 2)) > 0){
+      LED = 7;
     }else{
-      PORTB = 0;
+      LED = 0;
     }
   }
 }
